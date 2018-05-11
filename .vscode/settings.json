@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.ignorePath": "./.prettierignore",
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
+}
