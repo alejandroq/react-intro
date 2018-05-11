@@ -1,11 +1,10 @@
 # React Course
 
-### By Alejandro Quesada, Software Engineer
+_By Alejandro Quesada, Software Engineer_
 
 The goal of this course is to provision you a quick understanding of React and the beginning of a framework for thinking about declartive code. By the end you should have the aforementioned basis and know where to find resources to probe deeper into developing more reliable front-end software that is less prone to entropic side effects.
 
 - [React Course](#react-course)
-    - [By Alejandro Quesada, Software Engineer](#by-alejandro-quesada--software-engineer)
   - [What this course does not include:](#what-this-course-does-not-include)
   - [What this does include:](#what-this-does-include)
   - [Keep in Mind](#keep-in-mind)
