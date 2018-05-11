@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormBuilder, FieldControl, FieldGroup } from 'react-reactive-form';
+import { map } from 'rxjs/operators';
 import Values from './Values';
 import styles from './styles';
 
@@ -21,13 +22,20 @@ export default class ReactiveFormsRoute extends React.Component {
     terms: false,
     notes: '',
   });
+
+  constructor() {
+    super();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     alert(`You submitted \n ${JSON.stringify(this.myForm.value, null, 2)}`);
   }
+
   handleReset() {
     this.myForm.reset();
   }
+
   render() {
     return (
       <div style={styles.main}>
