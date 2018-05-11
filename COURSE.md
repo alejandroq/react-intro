@@ -243,6 +243,8 @@ import styles from './styles.css';
 export const AppButton = () => <button style={styles.Button}>Submit</button>;
 ```
 
+* [https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822](https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822)
+
 ## Conditional Elements
 
 If you want a element to appear given a specific condition:
@@ -258,8 +260,6 @@ const TodoList = ({ appear }) => (
   </>
 );
 ```
-
-* [https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822](https://codeburst.io/4-four-ways-to-style-react-components-ac6f323da822)
 
 ## Synthetic Events
 
