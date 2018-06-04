@@ -2,13 +2,15 @@ import { mapPropsStream, createEventHandler } from 'recompose';
 import { map, combineLatest } from 'rxjs/operators';
 
 export const openCloseStream = mapPropsStream(props$ => {
-  const { stream: onClick$, handler: onClick } = createEventHandler();
+  const {
+    stream: toggleVisibility$,
+    handler: toggleVisibility,
+  } = createEventHandler();
 
   let visible = false;
 
-  const visibility$ = onClick$
+  const visibility$ = toggleVisibility$
     .pipe(
-      combineLatest(props$),
       map(e => {
         visible = !visible;
         return visible;
@@ -16,5 +18,8 @@ export const openCloseStream = mapPropsStream(props$ => {
     )
     .startWith(visible);
 
-  return visibility$.map(visibility => ({ visibility, onClick }));
+  return visibility$.pipe(
+    combineLatest(props$),
+    map(([visibility, props]) => ({ ...props, visibility, toggleVisibility }))
+  );
 });

@@ -5,11 +5,15 @@ import { openCloseStream } from '../../hoc/OpenCloseStream/OpenCloseStream';
 
 const cardStyle = {
     margin: '2em',
+    width: '200px',
+    height: '200px',
     border: '25px solid pink',
 };
 
 const cardAltStyle = {
     margin: '2em',
+    width: '200px',
+    height: '200px',
     border: '25px solid red',
 };
 
@@ -27,9 +31,9 @@ const ShowMoreCard = ({ onClick }) => (
     </div>
 );
 
-const HideMoreCard = ({ children, onClick }) => (
+const HideMoreCard = ({ children, toggleVisibility }) => (
     <div style={cardAltStyle}>
-        <p style={pStyle} onClick={onClick}>
+        <p style={pStyle} onClick={toggleVisibility}>
             Hide content
         </p>
         {children}
