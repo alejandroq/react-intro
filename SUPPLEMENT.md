@@ -1,6 +1,17 @@
-# ES6 the Good Parts
+# ES6: The Good Parts
+*By Alejandro Quesada*
 
-`const` and `let`:
+- [ES6: The Good Parts](#es6--the-good-parts)
+  - [`const` and `let`:](#const-and-let)
+  - [Fat Arrow Function:](#fat-arrow-function)
+  - [Object Spread:](#object-spread)
+  - [Array Spread:](#array-spread)
+  - [Importing Modules:](#importing-modules)
+  - [Promises for simple singular and linear Async transactions (Observables for event streams - see RxJS):](#promises-for-simple-singular-and-linear-async-transactions-observables-for-event-streams---see-rxjsreactivexio-rxjs)
+  - [Destructuring:](#destructuring)
+  - [Template Strings:](#template-strings)
+
+## `const` and `let`:
 
 * `const` is for immutable variables (transpiler forces this - JavaScript actually does not support immutability fully in the Functional Programming way)
 * `let` in-lieu of `var`. A key distinction is in lexical scoping (improves shadowing errors, understanding application state and code readability):
@@ -41,7 +52,7 @@ function bar(x) {
 /** $ > will this appear */
 ```
 
-Fat Arrow Function:
+## Fat Arrow Function:
 
 * [https://stackoverflow.com/questions/34361379/arrow-function-vs-function-declaration-expressions-are-they-equivalent-exch](https://stackoverflow.com/questions/34361379/arrow-function-vs-function-declaration-expressions-are-they-equivalent-exch)
 * [https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/](https://www.sitepoint.com/es6-arrow-functions-new-fat-concise-syntax-javascript/)
@@ -89,7 +100,7 @@ function x(y) {
 }
 ```
 
-Object Spread:
+## Object Spread:
 
 ```js
 const x = { name: 'Alejandro', age: 1 };
@@ -98,7 +109,7 @@ console.log(...x, ...y);
 /** { name: 'Alejandro , age: 200, hobby: 'Angular' } */
 ```
 
-Array Spread:
+## Array Spread:
 
 ```js
 const x = [1, 2, 3];
@@ -107,7 +118,7 @@ console.log([...x, ...y]);
 /** [1, 2, 3, 4, 5, 6] */
 ```
 
-Importing Modules:
+## Importing Modules:
 
 ```js
 import React from 'react';
@@ -135,7 +146,7 @@ X.prototype.foo = function() {
 };
 ```
 
-Promises for simple singular and linear Async transactions (Observables for event streams - see [RxJS](reactivex.io/rxjs)):
+## Promises for simple singular and linear Async transactions (Observables for event streams - see [RxJS](reactivex.io/rxjs)):
 
 ```js
 const x = () =>
@@ -147,7 +158,7 @@ const x = () =>
   });
 ```
 
-Destructuring:
+## Destructuring:
 
 ```js
 /** es5 */
@@ -170,7 +181,7 @@ const { name, age } = props;
   console.log(`My name is ${name} and I am ${age} years old`))(props);
 ```
 
-Template Strings:
+## Template Strings:
 
 ```js
 /** es5 - multiline with variable */
