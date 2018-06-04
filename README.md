@@ -1,6 +1,6 @@
 # React Introduction
 
-_By Alejandro Quesada, Software Engineer_
+_By Alejandro Quesada_
 
 - [React Introduction](#react-introduction)
   - [Goal](#goal)
@@ -16,9 +16,9 @@ _By Alejandro Quesada, Software Engineer_
   - [Decomposing a UI into Components](#decomposing-a-ui-into-components)
   - [React's Virtual DOM and its diffing algorithm](#reacts-virtual-dom-and-its-diffing-algorithm)
   - [Handling Events](#handling-events)
+  - [Synthetic Events](#synthetic-events)
   - [Styling](#styling)
   - [Conditional Elements](#conditional-elements)
-  - [Synthetic Events](#synthetic-events)
   - [Directory Structure](#directory-structure)
   - [Thinking in React](#thinking-in-react)
   - [Versus Web Components](#versus-web-components)
@@ -243,6 +243,31 @@ Rule of thumb: if there is a HTML event listener (ala: `onclick`), make it camel
 
 * [https://reactjs.org/docs/handling-events.html](https://reactjs.org/docs/handling-events.html)
 
+## Synthetic Events
+
+Details: [https://reactjs.org/docs/events.html](https://reactjs.org/docs/events.html)
+
+tl:dr Promote cross-browser serenity. The synthetic event is ~1 level higher than a typical JS HTML Event (onclick, etc) and is pooled for performance purposes. To utilize for async purposes, call `event.persist()`; this will remove event from pool and place in your place of selection.
+
+```js
+function onClick(event) {
+  console.log(event); // => nullified object.
+  console.log(event.type); // => "click"
+  const eventType = event.type; // => "click"
+
+  setTimeout(function() {
+    console.log(event.type); // => null
+    console.log(eventType); // => "click"
+  }, 0);
+
+  // Won't work. this.state.clickEvent will only contain null values.
+  this.setState({ clickEvent: event });
+
+  // You can still export event properties.
+  this.setState({ eventType: event.type });
+}
+```
+
 ## Styling
 
 CRA comes with a preference for CSS. The `02-react/README.md` bears information on including SCSS. Other options include CSS in JS such as (Styled-Components)[https://www.styled-components.com/].
@@ -280,31 +305,6 @@ const TodoList = ({ appear }) => (
     {todos.length > 0 && <p>Count {todos.length}</p>}
   </>
 );
-```
-
-## Synthetic Events
-
-Details: [https://reactjs.org/docs/events.html](https://reactjs.org/docs/events.html)
-
-tl:dr Promote cross-browser serenity. The synthetic event is ~1 level higher than a typical JS HTML Event (onclick, etc) and is pooled for performance purposes. To utilize for async purposes, call `event.persist()`; this will remove event from pool and place in your place of selection.
-
-```js
-function onClick(event) {
-  console.log(event); // => nullified object.
-  console.log(event.type); // => "click"
-  const eventType = event.type; // => "click"
-
-  setTimeout(function() {
-    console.log(event.type); // => null
-    console.log(eventType); // => "click"
-  }, 0);
-
-  // Won't work. this.state.clickEvent will only contain null values.
-  this.setState({ clickEvent: event });
-
-  // You can still export event properties.
-  this.setState({ eventType: event.type });
-}
 ```
 
 ## Directory Structure
