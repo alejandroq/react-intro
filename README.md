@@ -97,7 +97,7 @@ console.log([1, 2, 3].map(x => x + 1));
 ```
 
 * JS operations on the Virtual DOM are faster than crawling the actual DOM
-* Component-Based
+* Component-based
   * Components encapsulate their functionality and maintain their own state. Additional information below.
 * Learn Once, Write Anywhere
   * React lives on many platforms such as React Native for Mobile and React VR for VR.
