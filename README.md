@@ -112,7 +112,7 @@ console.log([1, 2, 3].map(x => x + 1));
 
 What is a component? You already use them. HTML tags are each 'atomic' or 'leaf' components. How would you re-implement a paragraph tag in React?
 
-![what is a component?](images/03-component.png);
+![what is a component?](images/03-component.png)
 
 ```html
 <p style="color:red">Some Test</p>
