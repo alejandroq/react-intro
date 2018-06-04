@@ -139,7 +139,7 @@ const BoldText = ({ children }) => (
 () => <BoldText>This is a child</BoldText>
 ```
 
-In React you have two (and a third) styles of Components: Functional (or Presentation) and Class-based (or State-based | Containers). There is a larger distinction: Functional lacks state and lifecycle hooks; the Class-based has them. A Functional Component is a Dumb Component or sometimes called a Presentation Component. Heavy logical operations should be restricted to the latter two. 
+In React you have two (and a third) styles of Components: Functional (or Presentation) and Class-based (or State-based | Containers). There is a larger distinction: Functional lacks state and lifecycle hooks; the Class-based has them. A Functional Component is a Dumb Component or sometimes called a Presentation Component. Heavy logical operations should be restricted to the latter. 
 
 ```js
 /** Container */
